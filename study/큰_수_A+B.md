@@ -7,11 +7,15 @@ import sys
 
 # 수만 자리 이상의 숫자를 문자열로 변환하거나 입력받을 때 필요
 sys.set_int_max_str_digits(100000)
-```
+
 # 입력 예: 10^10000 같은 수도 그냥 읽어서 더하면 끝
 a, b = map(int, sys.stdin.readline().split())
 print(a + b)
-2. Java (BigInteger 클래스)자바는 기본 자료형으로는 처리가 불가능하며, java.math.BigInteger 클래스를 사용해야 합니다.주의: +, - 연산자를 사용할 수 없고 내부 메소드를 호출해야 합니다.Javaimport java.util.Scanner;
+```
+## 2. Java (BigInteger 클래스)
+자바는 기본 자료형으로는 처리가 불가능하며, java.math.BigInteger 클래스를 사용해야 합니다.주의: +, - 연산자를 사용할 수 없고 내부 메소드를 호출해야 합니다.
+```
+import java.util.Scanner;
 import java.math.BigInteger;
 
 public class Main {
@@ -26,7 +30,11 @@ public class Main {
         System.out.println(a.add(b));
     }
 }
-3. C++ (직접 구현 또는 라이브러리)C++은 표준 라이브러리에 큰 수 처리 클래스가 없습니다. 따라서 **문자열(string)**로 숫자를 입력받아 초등학교 때 배운 '세로셈' 방식을 직접 코드로 짜야 합니다.C++#include <iostream>
+```
+## 3. C++ (직접 구현 또는 라이브러리)
+C++은 표준 라이브러리에 큰 수 처리 클래스가 없습니다. 따라서 **문자열(string)**로 숫자를 입력받아 초등학교 때 배운 '세로셈' 방식을 직접 코드로 짜야 합니다.
+```
+#include <iostream>
 #include <string>
 #include <algorithm>
 #include <vector>
@@ -54,7 +62,11 @@ int main() {
     cout << addBigInt(a, b) << endl;
     return 0;
 }
-4. C언어 (배열과 반복문)C언어는 C++보다 더 원초적입니다. char 배열에 숫자를 담고, 아스키 코드 계산을 통해 각 자리수를 더해야 합니다.C#include <stdio.h>
+```
+## 4. C언어 (배열과 반복문)
+C언어는 C++보다 더 원초적입니다. char 배열에 숫자를 담고, 아스키 코드 계산을 통해 각 자리수를 더해야 합니다.
+```
+#include <stdio.h>
 #include <string.h>
 
 void reverse(char arr[]) {
@@ -89,4 +101,5 @@ int main() {
 
     return 0;
 }
+```
 💡 요약 비교 테이블언어난이도주요 방식Python매우 쉬움기본 int가 자동으로 처리함Java쉬움BigInteger 클래스 활용C++ / C어려움문자열로 받아 한 자리씩 수동 계산 (세로셈 구현)
