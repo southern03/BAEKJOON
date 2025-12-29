@@ -1,10 +1,13 @@
-📋 큰 수(Big Integer) 처리 방법 정리큰 수 문제는 보통 자료형의 한계($2^{64}-1$)를 넘어서는 수만 자리 이상의 숫자를 다룰 때 발생합니다. 
-# 1. Python (가장 쉬움)
-파이썬은 정수형(int)에 자릿수 제한이 없는 Arbitrary-precision arithmetic을 지원합니다. 하지만 최신 버전에서는 보안상의 이유로 문자열 변환 제한이 있으니 설정 코드를 포함하는 것이 좋습니다.Pythonimport sys
+# 📋 큰 수(Big Integer) 처리 방법 정리
+큰 수 문제는 보통 자료형의 한계($2^{64}-1$)를 넘어서는 수만 자리 이상의 숫자를 다룰 때 발생합니다. 
+## 1. Python (가장 쉬움)
+파이썬은 정수형(int)에 자릿수 제한이 없는 Arbitrary-precision arithmetic을 지원합니다. 하지만 최신 버전에서는 보안상의 이유로 문자열 변환 제한이 있으니 설정 코드를 포함하는 것이 좋습니다.
+```
+import sys
 
 # 수만 자리 이상의 숫자를 문자열로 변환하거나 입력받을 때 필요
 sys.set_int_max_str_digits(100000)
-
+```
 # 입력 예: 10^10000 같은 수도 그냥 읽어서 더하면 끝
 a, b = map(int, sys.stdin.readline().split())
 print(a + b)
